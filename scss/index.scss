@@ -1,0 +1,162 @@
+@use './components/breakpoints' as bp;
+@use './components/mixins' as mx;
+
+@use './util/colors' as cl;
+@use './util/typography' as tp;
+
+.main {
+    @include mx.w-h( 100%, 100vh );
+    @include mx.d-flex( row, center, center );
+    // max-width: 1400px;
+    margin: auto;
+
+    background-color: cl.$color-grad-violet;
+}
+
+.container {
+    @include mx.d-flex( row, center, center );
+    @include mx.w-h( 70%, auto );
+    min-width: 900px;
+    max-width: 900px;
+    margin: auto;
+    padding: 3rem 0;
+    background: #fff url(../images/bg-pattern-desktop.svg) no-repeat -82% 80% / 65%; 
+
+    border-radius: 10px;
+    position: relative;
+
+    @include bp.breakpoint( ms ) {
+        flex-direction: column;
+        width: 90%;
+        background: #fff url(../images/bg-pattern-mobile.svg) no-repeat top / 55%;
+        padding: 4rem 0;
+        min-width: auto;
+    }
+
+    &-img__box {
+        position: absolute;
+        top: 56%;
+        left: -10%;
+
+        transform: translate( 0, -50%);
+        z-index: 1;
+
+        @include bp.breakpoint( ms ) {
+            top: 7%;
+            left: -4%;
+            width: 40%;
+        }
+    }
+}
+
+.pictures {
+    @include mx.w-h( 50%, 50vh );
+    position: relative;
+
+    overflow: hidden;
+
+    @include bp.breakpoint( ms ) {
+        @include mx.w-h( 100%, auto );
+        overflow: visible;
+    }
+}
+
+.picture {
+
+    &__woman {
+        // @include mx.w-h( 100%, auto );
+        max-width: 80%;
+
+        position: absolute;
+        top: 50%;
+        left: -10%;
+
+        transform: translate( 0, -50% );
+
+        @include bp.breakpoint( ms ) {
+            max-width: 100%;
+            top: 0;
+            left: 50%;
+            transform: translate( -50%, -70% );
+        }
+    }
+}
+
+.faq {
+    @include mx.w-h( 50%, 100% );
+    // background-color: steelblue;
+    padding-right: 2rem;
+    
+
+    @include bp.breakpoint( ms ) {
+        padding-top: 10rem;
+        width: 90%;
+        margin: auto;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 3em;
+        margin: .5rem;
+
+    }
+}
+
+.questions {
+    @include mx.w-h( 85%, auto);
+    cursor: pointer;
+    
+
+    @include bp.breakpoint( ms ) {
+        width: 100%;
+    }
+}
+
+.question.active > .question-response {
+    height: 5rem;
+    transition: all .4s ease;
+}
+
+.question {
+    @include mx.d-flex( row, space-between, center );
+    @include mx.w-h( 100%, 100% );
+    padding: 1.2em;
+    // background-color: mediumorchid;
+    border-bottom: 1px solid cl.$color-divi-blue;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    @include bp.breakpoint( ms ) {
+        padding: .5rem;
+    }
+
+    &__title {
+        font-size: 1.2em;
+        margin: 0;
+        // background-color: sienna;
+    }
+
+    &__icon {
+        padding: 1em;
+        cursor: pointer;
+        // background-color: moccasin;
+        transition: transform .5s ease;
+
+        @include bp.breakpoint( ms ) {
+            padding: .5rem;
+        }
+
+        &-click {
+            transform: rotate(180deg);
+        }
+    }
+
+    &-response {
+        height: 0;
+        // background-color: mediumseagreen;
+        transition: all .4s ease;
+        overflow: hidden;
+    }
+}
