@@ -42,9 +42,9 @@
         z-index: 1;
 
         @include bp.breakpoint( ms ) {
-            top: 7%;
-            left: -4%;
-            width: 40%;
+            top: 6%;
+            left: 10%;
+            width: 30%;
         }
     }
 }
@@ -74,7 +74,7 @@
         transform: translate( 0, -50% );
 
         @include bp.breakpoint( ms ) {
-            max-width: 100%;
+            max-width: 70%;
             top: 0;
             left: 50%;
             transform: translate( -50%, -70% );

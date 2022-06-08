@@ -48,9 +48,9 @@ body {
 }
 @media screen and (max-width: 41.87em) {
   .container-img__box {
-    top: 7%;
-    left: -4%;
-    width: 40%;
+    top: 6%;
+    left: 10%;
+    width: 30%;
   }
 }
 
@@ -77,7 +77,7 @@ body {
 }
 @media screen and (max-width: 41.87em) {
   .picture__woman {
-    max-width: 100%;
+    max-width: 70%;
     top: 0;
     left: 50%;
     transform: translate(-50%, -70%);
